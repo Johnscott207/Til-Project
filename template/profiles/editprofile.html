@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% block title %}{{user.username}}{% endblock %}
+
+    {% block body %}
+    <!-- component -->
+
+        <div class="bg-white md:shadow-lg shadow-none rounded p-6 w-96" >
+            <p class="text-sm leading-normal">Edit and save your Profile</p>
+            <form class="space-y-5 mt-5" class="login" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="mb-4 relative">
+                    <label for="id_text" class="label absolute mb-0 -mt-2 pt-2 pl-3 leading-tighter text-gray-500 text-base mt-2 cursor-text">Profile Name</label>
+                    <input type="text" name="text"  id="id_text" class="w-full rounded px-3 border border-gray-500 pt-5 pb-2 focus:outline-none input active:outline-none" autofocus>
+                </div>
+                <button class="primaryAction w-full text-center bg-blue-700 hover:bg-blue-900 rounded-full text-white py-3 font-medium" type="submit">Save Profile Name</button>
+            </form>
+        </div>
+        <div class="bg-white md:shadow-lg shadow-none rounded p-6 w-96" >
+            <p class="text-sm leading-normal">Edit and save your Profile</p>
+            <form class="space-y-5 mt-5" class="login" action="" method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+                <div class="relative flex items-center border border-gray-500 focus:ring focus:border-blue-500 rounded">
+                    <label for="id_image" class="label absolute mb-5 -mt-5 -pt-5 pl-3 leading-tighter text-gray-500 text-base mt-2 cursor-text">Profile Image</label>
+                    <input type="file" name="image"  id="id_image" class="w-full rounded px-3 pt-5 outline-none pb-2 focus:outline-none active:outline-none input active:border-blue-500" />
+                    
+                </div>
+                <button class="primaryAction w-full text-center bg-blue-700 hover:bg-blue-900 rounded-full text-white py-3 font-medium" type="submit">Save Profile Image</button>
+            </form>
+        </div>
+        
+    {% endblock %}
